@@ -6,9 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#f8f8f6">
 
-  <meta name="description" content="Rohit Shelar is an independent AI Creative Designer creating YouTube thumbnails, social media posts, product advertisements and AI reels.">
+  <meta name="description" content="Rohit Shelar is an AI Creative Designer and Video Editor creating YouTube thumbnails, social media posts, product advertisements, AI reels and edited videos.">
 
-  <title>Rohit Shelar — AI Creative Designer</title>
+  <title>Rohit Shelar — AI Creative Designer &amp; Video Editor</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1023,6 +1023,66 @@
         transform: none;
       }
     }
+
+
+    /* Refined light Apple-inspired glass and rainbow accents */
+    :root {
+      --rainbow: linear-gradient(100deg, #ff5c8a 0%, #ff9d50 22%, #f5d547 42%, #69d59a 61%, #4cbdeb 80%, #8c75ef 100%);
+      --glass-white: rgba(255,255,255,.64);
+      --glass-border: rgba(255,255,255,.88);
+      --glass-shadow: 0 12px 34px rgba(28,31,25,.07);
+    }
+    .nav-wrap { background: rgba(248,248,246,.76); -webkit-backdrop-filter: saturate(180%) blur(22px); backdrop-filter: saturate(180%) blur(22px); }
+    .video-poster-placeholder { display:block; width:100%; height:100%; min-height:220px; background: radial-gradient(circle at 70% 25%, rgba(255,190,110,.32), transparent 34%), linear-gradient(135deg,#e9e6df,#c9c6bd 55%,#a8aaa5); }
+    .nav-links .nav-contact { background: #171815; color: #fff; border: 1px solid #171815; box-shadow: none; transition: background .2s ease, transform .2s ease; }
+    .nav-links .nav-contact:hover { background: #34352f; color: #fff; transform: translateY(-2px); }
+    .hero h1 span { color: transparent; background: var(--rainbow); background-size: 180% 100%; -webkit-background-clip: text; background-clip: text; animation: rainbow-drift 9s ease-in-out infinite alternate; }
+    @keyframes rainbow-drift { from { background-position: 0% 50%; } to { background-position: 100% 50%; } }
+    .services-section, .process-section { background: radial-gradient(ellipse at 12% 20%, rgba(255,255,255,.72), transparent 38%), radial-gradient(ellipse at 90% 85%, rgba(209,224,255,.28), transparent 34%), #efefea; }
+    .service-card, .process-card, .tool-card { background: var(--glass-white); border: 1px solid var(--glass-border); box-shadow: var(--glass-shadow), inset 0 1px 0 rgba(255,255,255,.85); -webkit-backdrop-filter: saturate(160%) blur(20px); backdrop-filter: saturate(160%) blur(20px); }
+    .service-card:hover, .process-card:hover, .tool-card:hover { transform: translateY(-5px); box-shadow: 0 18px 42px rgba(28,31,25,.11), inset 0 1px 0 rgba(255,255,255,.95); }
+    .service-bottom a { background: var(--rainbow); background-size: 180% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .services-grid { grid-template-columns: repeat(3, minmax(0,1fr)); }
+    .process-grid { grid-template-columns: repeat(4, minmax(0,1fr)); }
+    .tools-grid { grid-template-columns: repeat(5, minmax(0,1fr)); }
+    .contact-box .btn-green, .contact-box .btn-whatsapp { background: var(--rainbow); background-size: 180% 100%; border: 0; color: #171815; box-shadow: 0 8px 22px rgba(140,117,239,.16); }
+    .contact-box .btn-green:hover, .contact-box .btn-whatsapp:hover { background-position: 100% 50%; box-shadow: 0 11px 28px rgba(140,117,239,.22); }
+    .faq-section { background: #f2f2ee; }
+    .faq-layout { display: grid; grid-template-columns: .8fr 1.2fr; gap: 70px; align-items: start; }
+    .faq-intro h2 { font-family: Manrope,sans-serif; font-size: clamp(32px,4vw,48px); line-height: 1.08; letter-spacing: -2px; margin: 12px 0 18px; }
+    .faq-list { border-top: 1px solid var(--line); }
+    .faq-item { border-bottom: 1px solid var(--line); padding: 19px 0; }
+    .faq-item summary { cursor: pointer; list-style: none; font-weight: 600; display: flex; justify-content: space-between; gap: 18px; }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after { content: "+"; font-size: 22px; line-height: 1; color: #777870; transition: transform .2s; }
+    .faq-item[open] summary::after { content: "−"; }
+    .faq-item p { color: var(--muted); font-size: 14px; max-width: 650px; padding: 12px 34px 0 0; }
+    @media (max-width: 900px) { .services-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } .tools-grid { grid-template-columns: repeat(3,minmax(0,1fr)); } .process-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } .faq-layout { grid-template-columns: 1fr; gap: 28px; } }
+    @media (max-width: 650px) { .services-grid, .process-grid { grid-template-columns: 1fr; } .tools-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } .nav-links { gap: 13px; flex-wrap: wrap; justify-content: flex-end; } .nav-links a { font-size: 11px; } }
+    @media (prefers-reduced-motion: reduce) { .hero h1 span { animation: none; } }
+
+
+    /* Client wordmarks and real portfolio assets */
+    .clients-section { padding: 46px 0 70px; }
+    .clients-heading { text-align: center; margin-bottom: 28px; }
+    .clients-heading h2 { font-family: Manrope,sans-serif; font-size: clamp(26px,3vw,38px); letter-spacing: -1.5px; margin: 6px 0 8px; }
+    .clients-heading .section-description { max-width: none; }
+    .client-logos { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 16px; align-items: center; }
+    .client-wordmark { min-height: 84px; display:flex; align-items:center; justify-content:center; padding: 16px; border:1px solid var(--line); border-radius:16px; background:rgba(255,255,255,.72); color:#45463f; font-family:Manrope,sans-serif; font-weight:800; font-size:clamp(17px,2.2vw,25px); letter-spacing:-.8px; text-align:center; }
+    .client-wordmark.morton { color:#6d2518; letter-spacing:1.2px; }
+    .client-wordmark.nalam { color:#17633d; font-family:Georgia,serif; font-size:30px; }
+    .client-wordmark.foxnuts { color:#bd7511; letter-spacing:1.5px; }
+    .client-wordmark.heritage { color:#47736b; font-family:Georgia,serif; font-weight:600; }
+    .client-wordmark.fresh { color:#5a9d12; font-size:30px; font-weight:800; }
+    .client-wordmark.amritsar { color:#8b2d26; font-size:clamp(13px,1.7vw,20px); letter-spacing:.4px; }
+    .portfolio-art.has-image { display:block; padding:0; min-height:0; background:#efefea; text-align:left; }
+    .portfolio-art.has-image img { position:static; z-index:0; width:100%; height:auto; object-fit:contain; }
+    .portfolio-art.video-art { position:relative; }
+    .video-play { position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:52px; height:52px; border-radius:50%; display:grid; place-items:center; background:rgba(255,255,255,.9); color:#171815; box-shadow:0 5px 20px rgba(0,0,0,.18); font-size:18px; padding-left:3px; }
+    .portfolio-item:hover .video-play { transform:translate(-50%,-50%) scale(1.08); }
+    .modal-preview video { width:100%; max-height:68vh; display:block; object-fit:contain; background:#111; border-radius:12px; }
+    @media(max-width:760px) { .client-logos { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+
   </style>
 </head>
 
@@ -1032,12 +1092,16 @@
 
   <div class="nav-wrap">
     <nav class="container">
-      <a class="brand" href="#home">Rohit Shelar<span>®</span></a>
+      <a class="brand" href="#home">Rohit Shelar</a>
 
       <div class="nav-links">
+        <a href="#clients">Clients</a>
         <a href="#services">Services</a>
         <a href="#portfolio">Portfolio</a>
+        <a href="#process">How it works</a>
+        <a href="#tools">Tools</a>
         <a href="#about">About</a>
+        <a href="#faq">FAQ</a>
         <a href="#contact" class="nav-contact">Let's talk ↗</a>
       </div>
     </nav>
@@ -1051,7 +1115,7 @@
 
       <div class="eyebrow">
         <span class="dot"></span>
-        Independent AI Creative Designer
+        AI Creative Designer &amp; Video Editor
       </div>
 
       <h1>
@@ -1061,9 +1125,9 @@
 
       <div class="hero-bottom">
         <p class="hero-description">
-          I create eye-catching visuals and digital content for brands,
-          businesses and creators. From YouTube thumbnails to AI-powered
-          advertisements and reels.
+          I create engaging visual content and videos for creators, businesses
+          and brands — from scroll-stopping thumbnails and product ads to
+          AI reels and polished video edits.
         </p>
 
         <div class="hero-actions">
@@ -1084,12 +1148,32 @@
         </div>
 
         <div class="hero-banner-side">
-          Independent creative services<br>
-          By Rohit Shelar
+          Creative solutions for brands, businesses<br>
+          and creators
         </div>
       </div>
 
     </header>
+
+
+    <!-- CLIENTS / BRANDS -->
+    <section class="clients-section" id="clients">
+      <div class="container">
+        <div class="clients-heading reveal">
+          <p class="kicker">01 — Selected collaborations</p>
+          <h2>Brands I've worked with.</h2>
+          <p class="section-description">A selection of brands featured in my completed creative projects.</p>
+        </div>
+        <div class="client-logos reveal" aria-label="Brands worked with">
+          <div class="client-wordmark morton">MORTON</div>
+          <div class="client-wordmark nalam">Nalam</div>
+          <div class="client-wordmark foxnuts">FOX NUTS</div>
+          <div class="client-wordmark heritage">Heritage Pickles</div>
+          <div class="client-wordmark fresh">fresh</div>
+          <div class="client-wordmark amritsar">AMRITSAR HAVELI</div>
+        </div>
+      </div>
+    </section>
 
     <!-- SERVICES -->
 
@@ -1099,7 +1183,7 @@
 
         <div class="section-heading reveal">
           <div>
-            <p class="kicker">01 — My services</p>
+            <p class="kicker">02 — My services</p>
             <h2>What can I create<br>for you?</h2>
           </div>
 
@@ -1227,6 +1311,35 @@
 
           </article>
 
+          <article class="service-card reveal">
+
+            <div class="service-top">
+              <span class="service-icon">▸</span>
+              <span class="service-number">SERVICE 05</span>
+            </div>
+
+            <h3>Video Editing</h3>
+
+            <p>
+              Engaging video edits for creators and brands, shaped around
+              your content, audience and preferred visual style.
+            </p>
+
+            <div class="service-tags">
+              <span>YouTube videos</span>
+              <span>Short-form edits</span>
+              <span>Promotional videos</span>
+            </div>
+
+            <div class="service-bottom">
+              <small>Custom quotes available</small>
+              <a href="mailto:shelar.rohit2332@gmail.com?subject=Video%20Editing%20Enquiry">
+                Enquire ↗
+              </a>
+            </div>
+
+          </article>
+
         </div>
 
       </div>
@@ -1241,7 +1354,7 @@
 
         <div class="section-heading reveal">
           <div>
-            <p class="kicker">02 — Portfolio</p>
+            <p class="kicker">03 — Portfolio</p>
             <h2>A collection of<br>creative work.</h2>
           </div>
 
@@ -1273,185 +1386,123 @@
             AI Reels
           </button>
 
+          <button class="filter-btn" data-filter="editing">
+            Video Editing
+          </button>
+
         </div>
 
         <!-- PINTEREST STYLE MASONRY GRID -->
 
         <div class="portfolio-grid" id="portfolioGrid">
-
-          <!--
-            PORTFOLIO IMAGE INSTRUCTIONS:
-
-            Replace the placeholder artwork with your own image.
-
-            Example:
-
-            <div class="portfolio-art has-image">
-              <img src="assets/your-project.jpg" alt="Project description">
-            </div>
-
-            Add your image inside the portfolio-art div.
-            Keep the existing data attributes for filtering and preview.
-          -->
-
-          <article class="portfolio-item reveal"
-                   data-category="youtube"
-                   data-title="YouTube Thumbnail Concept"
-                   data-description="YouTube thumbnail design concept.">
-
-            <div class="portfolio-art art-one">
-              <div>
-                <h3>THE BIG<br>IDEA</h3>
-                <p>Thumbnail concept</p>
-              </div>
-            </div>
-
-            <div class="portfolio-meta">
-              <h3>YouTube Thumbnail</h3>
-              <p>Thumbnail design</p>
-            </div>
-
-          </article>
-
-          <article class="portfolio-item reveal"
-                   data-category="product"
-                   data-title="Product Advertising Concept"
-                   data-description="Product advertisement visual concept.">
-
-            <div class="portfolio-art art-two">
-              <div>
-                <h3>PURE<br>ESSENCE</h3>
-                <p>Product campaign</p>
-              </div>
-            </div>
-
-            <div class="portfolio-meta">
-              <h3>Product Advertising</h3>
-              <p>Product visual concept</p>
-            </div>
-
-          </article>
-
-          <article class="portfolio-item reveal"
-                   data-category="social"
-                   data-title="Social Media Creative"
-                   data-description="Social media design concept.">
-
-            <div class="portfolio-art art-three">
-              <div>
-                <h3>CREATE<br>YOUR STORY</h3>
-                <p>Social campaign</p>
-              </div>
-            </div>
-
-            <div class="portfolio-meta">
-              <h3>Social Media Creative</h3>
-              <p>Social media design</p>
-            </div>
-
-          </article>
-
-          <article class="portfolio-item reveal"
-                   data-category="reels"
-                   data-title="AI Reel Concept"
-                   data-description="Short-form AI video concept.">
-
-            <div class="portfolio-art art-four">
-              <div>
-                <h3>AI VIDEO<br>CONCEPT</h3>
-                <p>▶ Reel preview</p>
-              </div>
-            </div>
-
-            <div class="portfolio-meta">
-              <h3>AI Reel</h3>
-              <p>Short-form video concept</p>
-            </div>
-
-          </article>
-
-          <article class="portfolio-item reveal"
-                   data-category="product"
-                   data-title="Product Campaign"
-                   data-description="Creative product advertising concept.">
-
-            <div class="portfolio-art art-five">
-              <div>
-                <h3>MADE TO<br>STAND OUT</h3>
-                <p>Product advertisement</p>
-              </div>
-            </div>
-
-            <div class="portfolio-meta">
-              <h3>Product Campaign</h3>
-              <p>Advertising concept</p>
-            </div>
-
-          </article>
-
-          <article class="portfolio-item reveal"
-                   data-category="youtube"
-                   data-title="Creator Thumbnail"
-                   data-description="Creative thumbnail concept for a creator.">
-
-            <div class="portfolio-art art-six">
-              <div>
-                <h3>WATCH<br>THIS!</h3>
-                <p>Creator content</p>
-              </div>
-            </div>
-
-            <div class="portfolio-meta">
-              <h3>Creator Thumbnail</h3>
-              <p>YouTube design</p>
-            </div>
-
-          </article>
-
-          <article class="portfolio-item reveal"
-                   data-category="social"
-                   data-title="Brand Social Creative"
-                   data-description="Social media campaign visual concept.">
-
-            <div class="portfolio-art art-seven">
-              <div>
-                <h3>YOUR<br>BRAND</h3>
-                <p>Social creative</p>
-              </div>
-            </div>
-
-            <div class="portfolio-meta">
-              <h3>Brand Creative</h3>
-              <p>Social media campaign</p>
-            </div>
-
-          </article>
-
-          <article class="portfolio-item reveal"
-                   data-category="reels"
-                   data-title="AI Video Advertisement"
-                   data-description="AI-powered promotional video concept.">
-
-            <div class="portfolio-art art-eight">
-              <div>
-                <h3>THE NEXT<br>FRAME</h3>
-                <p>▶ Video concept</p>
-              </div>
-            </div>
-
-            <div class="portfolio-meta">
-              <h3>AI Video Advertisement</h3>
-              <p>Video concept</p>
-            </div>
-
-          </article>
-
+<article class="portfolio-item reveal" data-category="product" data-title="Morton — National Chai Day" data-description="A festive Morton campaign pairing chai and pasta for National Chai Day.">
+  <div class="portfolio-art has-image"><img src="assets/1.jpg" alt="Morton — National Chai Day portfolio preview" loading="lazy"></div>
+  <div class="portfolio-meta"><h3>Morton — National Chai Day</h3><p>Product advertising</p></div>
+</article>
+<article class="portfolio-item reveal" data-category="product" data-title="Aam Panna — Summer Campaign" data-description="A refreshing summer product visual for an Aam Panna beverage.">
+  <div class="portfolio-art has-image"><img src="assets/2.jpg" alt="Aam Panna — Summer Campaign portfolio preview" loading="lazy"></div>
+  <div class="portfolio-meta"><h3>Aam Panna — Summer Campaign</h3><p>Product advertising</p></div>
+</article>
+<article class="portfolio-item reveal" data-category="product" data-title="Foxnuts — Flavour Campaign" data-description="A multi-flavour snack campaign highlighting Foxnuts variants.">
+  <div class="portfolio-art has-image"><img src="assets/3.jpg" alt="Foxnuts — Flavour Campaign portfolio preview" loading="lazy"></div>
+  <div class="portfolio-meta"><h3>Foxnuts — Flavour Campaign</h3><p>Product advertising</p></div>
+</article>
+<article class="portfolio-item reveal" data-category="product" data-title="Green Smoothie — Nature Campaign" data-description="A nature-led visual concept for a green smoothie product.">
+  <div class="portfolio-art has-image"><img src="assets/4.jpg" alt="Green Smoothie — Nature Campaign portfolio preview" loading="lazy"></div>
+  <div class="portfolio-meta"><h3>Green Smoothie — Nature Campaign</h3><p>Product advertising</p></div>
+</article>
+<article class="portfolio-item reveal" data-category="product" data-title="Heritage Pickles — Product Visual" data-description="A premium product visual for Heritage Pickles.">
+  <div class="portfolio-art has-image"><img src="assets/6.jpg" alt="Heritage Pickles — Product Visual portfolio preview" loading="lazy"></div>
+  <div class="portfolio-meta"><h3>Heritage Pickles — Product Visual</h3><p>Product advertising</p></div>
+</article>
+<article class="portfolio-item reveal" data-category="product" data-title="Nalam — Farm to Home" data-description="A farm-to-home campaign for Nalam groundnut oil.">
+  <div class="portfolio-art has-image"><img src="assets/7.jpg" alt="Nalam — Farm to Home portfolio preview" loading="lazy"></div>
+  <div class="portfolio-meta"><h3>Nalam — Farm to Home</h3><p>Product advertising</p></div>
+</article>
+<article class="portfolio-item reveal" data-category="product" data-title="Nalam — Natural Protection" data-description="A family-focused product advertisement for Nalam groundnut oil.">
+  <div class="portfolio-art has-image"><img src="assets/8.jpg" alt="Nalam — Natural Protection portfolio preview" loading="lazy"></div>
+  <div class="portfolio-meta"><h3>Nalam — Natural Protection</h3><p>Product advertising</p></div>
+</article>
+<article class="portfolio-item reveal" data-category="product" data-title="Nalam — Goodness in Every Drop" data-description="A character-led campaign for Nalam edible oils.">
+  <div class="portfolio-art has-image"><img src="assets/9.jpg" alt="Nalam — Goodness in Every Drop portfolio preview" loading="lazy"></div>
+  <div class="portfolio-meta"><h3>Nalam — Goodness in Every Drop</h3><p>Product advertising</p></div>
+</article>
+<article class="portfolio-item reveal" data-category="product" data-title="Nalam — Coconut Oil" data-description="A product-focused creative for Nalam coconut oil.">
+  <div class="portfolio-art has-image"><img src="assets/11.jpg" alt="Nalam — Coconut Oil portfolio preview" loading="lazy"></div>
+  <div class="portfolio-meta"><h3>Nalam — Coconut Oil</h3><p>Product advertising</p></div>
+</article>
+<article class="portfolio-item reveal" data-category="product" data-title="Morton — Real Taste" data-description="A food-led promotional creative for Morton sauce.">
+  <div class="portfolio-art has-image"><img src="assets/12.jpg" alt="Morton — Real Taste portfolio preview" loading="lazy"></div>
+  <div class="portfolio-meta"><h3>Morton — Real Taste</h3><p>Product advertising</p></div>
+</article>
+<article class="portfolio-item reveal" data-category="product" data-title="Heritage Pickles — Feel Our Heritage" data-description="A rustic product visual for Heritage Pickles.">
+  <div class="portfolio-art has-image"><img src="assets/13.jpg" alt="Heritage Pickles — Feel Our Heritage portfolio preview" loading="lazy"></div>
+  <div class="portfolio-meta"><h3>Heritage Pickles — Feel Our Heritage</h3><p>Product advertising</p></div>
+</article>
+<article class="portfolio-item reveal" data-category="product" data-title="Fresh — Premium Mango" data-description="A tropical summer campaign for a mango beverage.">
+  <div class="portfolio-art has-image"><img src="assets/14.jpg" alt="Fresh — Premium Mango portfolio preview" loading="lazy"></div>
+  <div class="portfolio-meta"><h3>Fresh — Premium Mango</h3><p>Product advertising</p></div>
+</article>
+<article class="portfolio-item reveal" data-category="product" data-title="Amritsar Haveli — Paneer Lababdar" data-description="A food-led promotional creative for Amritsar Haveli.">
+  <div class="portfolio-art has-image"><img src="assets/15.jpg" alt="Amritsar Haveli — Paneer Lababdar portfolio preview" loading="lazy"></div>
+  <div class="portfolio-meta"><h3>Amritsar Haveli — Paneer Lababdar</h3><p>Product advertising</p></div>
+</article>
+<article class="portfolio-item reveal" data-category="youtube" data-title="Technology — Digital Future" data-description="A technology-focused YouTube thumbnail built around a futuristic visual concept.">
+  <div class="portfolio-art has-image"><img src="assets/thumbnail design.jpg" alt="Technology — Digital Future portfolio preview" loading="lazy"></div>
+  <div class="portfolio-meta"><h3>Technology — Digital Future</h3><p>YouTube thumbnail</p></div>
+</article>
+<article class="portfolio-item reveal" data-category="youtube" data-title="Escape the Rat Race" data-description="A bold YouTube thumbnail concept about breaking away from the rat race.">
+  <div class="portfolio-art has-image"><img src="assets/thumbnail design!.jpg" alt="Escape the Rat Race portfolio preview" loading="lazy"></div>
+  <div class="portfolio-meta"><h3>Escape the Rat Race</h3><p>YouTube thumbnail</p></div>
+</article>
+<article class="portfolio-item reveal" data-category="reels" data-title="AI Reel — Outdoor Food Experience" data-description="A cinematic food and dining visual story." data-video="assets/16.mp4">
+  <div class="portfolio-art has-image video-art"><span class="video-poster-placeholder" role="img" aria-label="AI Reel — Outdoor Food Experience portfolio preview"></span><span class="video-play" aria-hidden="true">▶</span></div>
+  <div class="portfolio-meta"><h3>AI Reel — Outdoor Food Experience</h3><p>AI reels · Video</p></div>
+</article>
+<article class="portfolio-item reveal" data-category="reels" data-title="AI Reel — Rice Preparation" data-description="A food-focused short-form video showing rice preparation." data-video="assets/17.mp4">
+  <div class="portfolio-art has-image video-art"><span class="video-poster-placeholder" role="img" aria-label="AI Reel — Rice Preparation portfolio preview"></span><span class="video-play" aria-hidden="true">▶</span></div>
+  <div class="portfolio-meta"><h3>AI Reel — Rice Preparation</h3><p>AI reels · Video</p></div>
+</article>
+<article class="portfolio-item reveal" data-category="reels" data-title="AI Reel — Traditional Oil Press" data-description="A visual story around traditional oil extraction." data-video="assets/18.mp4">
+  <div class="portfolio-art has-image video-art"><span class="video-poster-placeholder" role="img" aria-label="AI Reel — Traditional Oil Press portfolio preview"></span><span class="video-play" aria-hidden="true">▶</span></div>
+  <div class="portfolio-meta"><h3>AI Reel — Traditional Oil Press</h3><p>AI reels · Video</p></div>
+</article>
+<article class="portfolio-item reveal" data-category="reels" data-title="AI Reel — Veloura Blueberry" data-description="A product-focused short video for a blueberry product." data-video="assets/19.mp4">
+  <div class="portfolio-art has-image video-art"><span class="video-poster-placeholder" role="img" aria-label="AI Reel — Veloura Blueberry portfolio preview"></span><span class="video-play" aria-hidden="true">▶</span></div>
+  <div class="portfolio-meta"><h3>AI Reel — Veloura Blueberry</h3><p>AI reels · Video</p></div>
+</article>
+<article class="portfolio-item reveal" data-category="reels" data-title="AI Reel — Light & Crunchy" data-description="A snack product video highlighting a light and crunchy texture." data-video="assets/20.mp4">
+  <div class="portfolio-art has-image video-art"><span class="video-poster-placeholder" role="img" aria-label="AI Reel — Light & Crunchy portfolio preview"></span><span class="video-play" aria-hidden="true">▶</span></div>
+  <div class="portfolio-meta"><h3>AI Reel — Light & Crunchy</h3><p>AI reels · Video</p></div>
+</article>
+<article class="portfolio-item reveal" data-category="reels" data-title="AI Reel — Amul Kool" data-description="A beverage product short-form video." data-video="assets/21.mp4">
+  <div class="portfolio-art has-image video-art"><span class="video-poster-placeholder" role="img" aria-label="AI Reel — Amul Kool portfolio preview"></span><span class="video-play" aria-hidden="true">▶</span></div>
+  <div class="portfolio-meta"><h3>AI Reel — Amul Kool</h3><p>AI reels · Video</p></div>
+</article>
+<article class="portfolio-item reveal" data-category="reels" data-title="AI Reel — Cheese Pizza" data-description="A food product video featuring a cheesy pizza." data-video="assets/22.mp4">
+  <div class="portfolio-art has-image video-art"><span class="video-poster-placeholder" role="img" aria-label="AI Reel — Cheese Pizza portfolio preview"></span><span class="video-play" aria-hidden="true">▶</span></div>
+  <div class="portfolio-meta"><h3>AI Reel — Cheese Pizza</h3><p>AI reels · Video</p></div>
+</article>
+<article class="portfolio-item reveal" data-category="reels" data-title="AI Architecture — Construction Visual 01" data-description="An AI-assisted architectural construction visual." data-video="assets/Ai building construction 1.mp4">
+  <div class="portfolio-art has-image video-art"><span class="video-poster-placeholder" role="img" aria-label="AI Architecture — Construction Visual 01 portfolio preview"></span><span class="video-play" aria-hidden="true">▶</span></div>
+  <div class="portfolio-meta"><h3>AI Architecture — Construction Visual 01</h3><p>AI reels · Video</p></div>
+</article>
+<article class="portfolio-item reveal" data-category="reels" data-title="AI Architecture — Construction Visual 02" data-description="An AI-assisted building construction visual." data-video="assets/Ai Building construction 2.mp4">
+  <div class="portfolio-art has-image video-art"><span class="video-poster-placeholder" role="img" aria-label="AI Architecture — Construction Visual 02 portfolio preview"></span><span class="video-play" aria-hidden="true">▶</span></div>
+  <div class="portfolio-meta"><h3>AI Architecture — Construction Visual 02</h3><p>AI reels · Video</p></div>
+</article>
+<article class="portfolio-item reveal" data-category="reels" data-title="AI Architecture — Building Walkaround" data-description="An architectural building walkaround video." data-video="assets/Ai building walkaround.mp4">
+  <div class="portfolio-art has-image video-art"><span class="video-poster-placeholder" role="img" aria-label="AI Architecture — Building Walkaround portfolio preview"></span><span class="video-play" aria-hidden="true">▶</span></div>
+  <div class="portfolio-meta"><h3>AI Architecture — Building Walkaround</h3><p>AI reels · Video</p></div>
+</article>
+<article class="portfolio-item reveal" data-category="editing" data-title="Video Editing — Sports Feature" data-description="A completed video-editing sample featuring sports event footage and branded visuals." data-video="assets/video editing 1.mp4">
+  <div class="portfolio-art has-image video-art"><span class="video-poster-placeholder" role="img" aria-label="Video Editing — Sports Feature portfolio preview"></span><span class="video-play" aria-hidden="true">▶</span></div>
+  <div class="portfolio-meta"><h3>Video Editing — Sports Feature</h3><p>Video editing · Sample</p></div>
+</article>
         </div>
+        <p id="portfolioEmpty" class="portfolio-note" hidden>More projects in this category will be added soon.</p>
 
-        <p class="portfolio-note">
-          Portfolio placeholders are illustrative designs, not completed client projects.
-          Replace them with your own work before publishing.
-        </p>
+        <p class="portfolio-note">Selected completed brand projects, thumbnail designs and video work. Social media post samples will be added as they are finalized.</p>
 
       </div>
 
@@ -1480,13 +1531,13 @@
 
     <!-- HOW IT WORKS -->
 
-    <section class="process-section">
+    <section class="process-section" id="process">
 
       <div class="container">
 
         <div class="section-heading reveal">
           <div>
-            <p class="kicker">03 — My process</p>
+            <p class="kicker">04 — My process</p>
             <h2>Simple process.<br>Creative results.</h2>
           </div>
 
@@ -1509,19 +1560,28 @@
 
           <article class="process-card reveal">
             <span class="process-number">STEP 02</span>
-            <h3>Creation & feedback</h3>
+            <h3>Creative concept</h3>
             <p>
-              I'll develop the creative direction, share the work
-              and make the agreed revisions.
+              I'll shape a visual direction around your goals,
+              references, brand and audience.
             </p>
           </article>
 
           <article class="process-card reveal">
             <span class="process-number">STEP 03</span>
-            <h3>Final delivery</h3>
+            <h3>Design & delivery</h3>
             <p>
-              Receive your finalized creative assets in
-              the agreed formats and specifications.
+              I'll create your content and deliver the finished
+              files in the agreed formats.
+            </p>
+          </article>
+
+          <article class="process-card reveal">
+            <span class="process-number">STEP 04</span>
+            <h3>Feedback & revisions</h3>
+            <p>
+              Share your feedback and I'll make the revisions
+              agreed for your project.
             </p>
           </article>
 
@@ -1539,7 +1599,7 @@
 
         <div class="section-heading reveal">
           <div>
-            <p class="kicker">04 — My toolkit</p>
+            <p class="kicker">05 — My toolkit</p>
             <h2>Tools behind<br>the creativity.</h2>
           </div>
 
@@ -1551,47 +1611,18 @@
 
         <div class="tools-grid">
 
-          <article class="tool-card reveal">
-            <div class="tool-logo">AI</div>
-            <h3>ChatGPT</h3>
-            <p>Creative ideas and prompt development</p>
-          </article>
-
-          <article class="tool-card reveal">
-            <div class="tool-logo">G</div>
-            <h3>Google Gemini</h3>
-            <p>AI-assisted creative workflows</p>
-          </article>
-
-          <article class="tool-card reveal">
-            <div class="tool-logo">F</div>
-            <h3>Google Flow</h3>
-            <p>AI video creation</p>
-          </article>
-
-          <article class="tool-card reveal">
-            <div class="tool-logo">Ps</div>
-            <h3>Adobe Creative Tools</h3>
-            <p>Visual editing and production</p>
-          </article>
-
-          <article class="tool-card reveal">
-            <div class="tool-logo">DaV</div>
-            <h3>DaVinci Resolve</h3>
-            <p>Video editing and finishing</p>
-          </article>
-
-          <article class="tool-card reveal">
-            <div class="tool-logo">C</div>
-            <h3>Canva</h3>
-            <p>Graphic design and layouts</p>
-          </article>
+          <article class="tool-card reveal"><div class="tool-logo">M</div><h3>Midjourney</h3><p>AI image generation</p></article>
+          <article class="tool-card reveal"><div class="tool-logo">H</div><h3>HeyGen</h3><p>AI avatar videos</p></article>
+          <article class="tool-card reveal"><div class="tool-logo">AI</div><h3>ChatGPT</h3><p>Ideas and prompt development</p></article>
+          <article class="tool-card reveal"><div class="tool-logo">H</div><h3>Higgsfield</h3><p>AI visual and video creation</p></article>
+          <article class="tool-card reveal"><div class="tool-logo">11</div><h3>ElevenLabs</h3><p>AI voice and audio</p></article>
+          <article class="tool-card reveal"><div class="tool-logo">G</div><h3>Gemini</h3><p>AI-assisted creative workflows</p></article>
+          <article class="tool-card reveal"><div class="tool-logo">C</div><h3>Canva</h3><p>Graphic design and layouts</p></article>
+          <article class="tool-card reveal"><div class="tool-logo">C</div><h3>Claude</h3><p>Writing and creative support</p></article>
+          <article class="tool-card reveal"><div class="tool-logo">▶</div><h3>CapCut PC</h3><p>Video editing and production</p></article>
+          <article class="tool-card reveal"><div class="tool-logo">F</div><h3>Google Flow</h3><p>AI video creation</p></article>
 
         </div>
-
-        <p class="portfolio-note">
-          Only retain the tools you currently use and are comfortable discussing with clients.
-        </p>
 
       </div>
 
@@ -1604,16 +1635,15 @@
       <div class="container about-grid">
 
         <div class="about-title reveal">
-          <p class="kicker">05 — About me</p>
-          <h2>I'm Rohit.<br>I make ideas<br>visual.</h2>
+          <p class="kicker">06 — About me</p>
+          <h2>AI Creative Designer<br>&amp; Video Editor.</h2>
         </div>
 
         <div class="about-copy reveal">
 
           <p>
-            Hello! I'm <strong>Rohit Shelar</strong>, an independent
-            AI Creative Designer exploring the intersection of
-            artificial intelligence, design and video production.
+            Hello! I'm <strong>Rohit Shelar</strong>, an AI Creative Designer &amp; Video Editor focused on creating
+            engaging visuals and thoughtful video content.
           </p>
 
           <p>
@@ -1623,20 +1653,41 @@
           </p>
 
           <p>
-            Whether it's a YouTube thumbnail, a product advertisement,
-            a social media campaign or a short-form video, I aim to
-            create work that communicates the idea clearly.
+            From YouTube thumbnails and social media creatives to product
+            advertising, AI reels and video editing, I bring ideas to life
+            through a mix of creative thinking and modern tools.
           </p>
 
           <div class="about-highlight">
-            Independent creative services by Rohit Shelar.
-            Personal approach, direct communication and creative execution.
+            Creative ideas, thoughtful collaboration and quality execution.
+            Bringing the right creative people together to deliver great work.
           </div>
 
         </div>
 
       </div>
 
+    </section>
+
+
+    <!-- FAQ -->
+
+    <section class="faq-section" id="faq">
+      <div class="container faq-layout">
+        <div class="faq-intro reveal">
+          <p class="kicker">07 — FAQ</p>
+          <h2>Good to know<br>before we begin.</h2>
+          <p class="section-description">A few quick answers to common project questions.</p>
+        </div>
+        <div class="faq-list reveal">
+          <details class="faq-item"><summary>What services do you offer?</summary><p>I offer YouTube thumbnails, social media posts, product advertising, AI reels and video editing.</p></details>
+          <details class="faq-item"><summary>How do I get a quote for my project?</summary><p>Share your requirements, references and expected deliverables through email or WhatsApp. I'll review the details and provide a custom quote.</p></details>
+          <details class="faq-item"><summary>How long does a project take?</summary><p>Timelines depend on the type and complexity of the project. I'll confirm an estimated delivery time before we begin.</p></details>
+          <details class="faq-item"><summary>Do you work with international clients?</summary><p>Yes. I can discuss projects with clients and businesses from different countries.</p></details>
+          <details class="faq-item"><summary>Can I request changes to the final work?</summary><p>Yes. The revision scope can be discussed and agreed upon before the project starts.</p></details>
+          <details class="faq-item"><summary>How can I start a project?</summary><p>Contact me through email or WhatsApp with a short description of what you need. I'll get back to you to discuss the next steps.</p></details>
+        </div>
+      </div>
     </section>
 
     <!-- CONTACT -->
@@ -1647,7 +1698,7 @@
 
         <div class="contact-box reveal">
 
-          <p class="kicker">06 — Let's work together</p>
+          <p class="kicker">08 — Let's work together</p>
 
           <h2>Have an idea?<br>Let's create it.</h2>
 
@@ -1666,36 +1717,13 @@
             </a>
 
             <a
-              class="btn btn-light"
-              style="border-color:#777a70;color:white;"
+              class="btn btn-whatsapp"
               href="https://wa.me/918459105972?text=Hi%20Rohit%2C%20I%20am%20interested%20in%20your%20creative%20services."
               target="_blank"
               rel="noopener noreferrer"
             >
               WhatsApp me ↗
             </a>
-
-          </div>
-
-          <div class="contact-details">
-
-            <div class="contact-detail">
-              <small>Email</small>
-              <a href="mailto:shelar.rohit2332@gmail.com">
-                shelar.rohit2332@gmail.com
-              </a>
-            </div>
-
-            <div class="contact-detail">
-              <small>WhatsApp</small>
-              <a
-                href="https://wa.me/918459105972"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                +91 8459105972
-              </a>
-            </div>
 
           </div>
 
@@ -1744,17 +1772,18 @@
 
         button.classList.add("active");
 
+        let visibleCount = 0;
         portfolioItems.forEach(item => {
-
           const category = item.dataset.category;
-
           if (selectedFilter === "all" || category === selectedFilter) {
             item.classList.remove("hidden");
+            visibleCount++;
           } else {
             item.classList.add("hidden");
           }
-
         });
+        const emptyState = document.getElementById("portfolioEmpty");
+        if (emptyState) emptyState.hidden = visibleCount !== 0;
 
       });
 
@@ -1775,13 +1804,21 @@
 
         const artwork = item.querySelector(".portfolio-art");
         const image = artwork.querySelector("img");
+        const videoSource = item.dataset.video;
 
         modalTitle.textContent = item.dataset.title;
         modalDescription.textContent = item.dataset.description;
 
         modalPreview.innerHTML = "";
 
-        if (image) {
+        if (videoSource) {
+          const previewVideo = document.createElement("video");
+          previewVideo.src = videoSource;
+          previewVideo.controls = true;
+          previewVideo.autoplay = true;
+          previewVideo.playsInline = true;
+          modalPreview.appendChild(previewVideo);
+        } else if (image) {
 
           const previewImage = document.createElement("img");
           previewImage.src = image.src;
@@ -1811,6 +1848,9 @@
 
     function closeModal() {
       modal.classList.remove("open");
+      const activeVideo = modalPreview.querySelector("video");
+      if (activeVideo) activeVideo.pause();
+      modalPreview.innerHTML = "";
       document.body.style.overflow = "";
     }
 
