@@ -1083,6 +1083,59 @@
     .modal-preview video { width:100%; max-height:68vh; display:block; object-fit:contain; background:#111; border-radius:12px; }
     @media(max-width:760px) { .client-logos { grid-template-columns:repeat(2,minmax(0,1fr)); } }
 
+
+    /* Hero showcase and seamless logo marquees */
+    .hero { padding-top: 88px; padding-bottom: 48px; }
+    .hero h1 { max-width: 1000px; margin-top: 25px; font-size: clamp(54px, 9vw, 112px); letter-spacing: -6px; }
+    .hero h1 span { display: inline-block; }
+    .hero-description { max-width: 540px; }
+    .hero-showcase { display:grid; grid-template-columns:1.35fr .9fr; gap:14px; margin-top:48px; height:390px; }
+    .hero-showcase-main, .hero-showcase-small { overflow:hidden; border-radius:22px; background:#eeeee9; min-width:0; }
+    .hero-showcase-main img, .hero-showcase-small img { width:100%; height:100%; object-fit:cover; }
+    .hero-showcase-main img { object-position:center; }
+    .hero-showcase-side { display:grid; grid-template-rows:1fr 1fr; gap:14px; min-height:0; }
+    .hero-showcase-small img { object-fit:cover; }
+    .clients-section { padding:44px 0 62px; overflow:hidden; }
+    .clients-heading { margin-bottom:24px; }
+    .logo-marquee { overflow:hidden; width:100%; position:relative; }
+    .logo-track { display:flex; width:max-content; animation:logo-marquee 42s linear infinite; }
+    .logo-marquee:hover .logo-track { animation-play-state:paused; }
+    .logo-set { display:flex; align-items:center; flex-shrink:0; gap:24px; padding-right:24px; }
+    .logo-item { width:190px; height:92px; display:flex; align-items:center; justify-content:center; padding:12px 20px; border:1px solid rgba(231,231,225,.8); border-radius:17px; background:rgba(255,255,255,.7); }
+    .logo-item img { max-width:100%; max-height:64px; width:auto; height:auto; object-fit:contain; }
+    .tools-marquee { padding:10px 0 20px; }
+    .tools-marquee .logo-track { animation-duration:48s; }
+    .tool-logo-item { min-width:154px; height:92px; padding:14px 20px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:9px; border:1px solid var(--line); border-radius:17px; background:rgba(255,255,255,.72); box-shadow:var(--glass-shadow); }
+    .tool-logo-item img { width:34px; height:34px; object-fit:contain; border-radius:8px; }
+    .tool-logo-item span { font-size:12px; font-weight:600; white-space:nowrap; color:var(--text); }
+    @keyframes logo-marquee { from { transform:translateX(0); } to { transform:translateX(-50%); } }
+    .services-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .service-card { min-height:235px; display:flex; flex-direction:column; }
+    .service-card h3 { margin-top:0; }
+    .service-card .service-bottom { margin-top:auto; }
+    .service-tags { margin-bottom:20px; }
+    .service-tags span { line-height:1.35; }
+    @media(max-width:900px) {
+      .services-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+      .hero-showcase { height:330px; }
+    }
+    @media(max-width:650px) {
+      .hero { padding-top:68px; }
+      .hero h1 { letter-spacing:-3.5px; }
+      .hero-showcase { grid-template-columns:1fr 1fr; height:250px; gap:9px; margin-top:32px; }
+      .hero-showcase-side { gap:9px; }
+      .hero-showcase-main, .hero-showcase-small { border-radius:14px; }
+      .logo-set { gap:12px; padding-right:12px; }
+      .logo-item { width:145px; height:76px; padding:10px 14px; }
+      .logo-item img { max-height:52px; }
+      .tool-logo-item { min-width:126px; height:82px; padding:10px 14px; }
+      .tool-logo-item img { width:29px; height:29px; }
+      .services-grid { grid-template-columns:1fr; }
+    }
+    @media(prefers-reduced-motion:reduce) {
+      .logo-track { animation:none; }
+    }
+
   </style>
 </head>
 
@@ -1112,47 +1165,22 @@
     <!-- HERO -->
 
     <header class="hero container" id="home">
-
-      <div class="eyebrow">
-        <span class="dot"></span>
-        AI Creative Designer &amp; Video Editor
-      </div>
-
-      <h1>
-        Creative work.<br>
-        <span>Powered by AI.</span>
-      </h1>
-
+      <div class="eyebrow"><span class="dot"></span> AI Creative Designer &amp; Video Editor</div>
+      <h1>Ideas deserve<br><span>to be seen.</span></h1>
       <div class="hero-bottom">
-        <p class="hero-description">
-          I create engaging visual content and videos for creators, businesses
-          and brands — from scroll-stopping thumbnails and product ads to
-          AI reels and polished video edits.
-        </p>
-
+        <p class="hero-description">I turn ideas into visuals that make people stop and look — from standout thumbnails and brand creatives to product ads, AI reels and polished videos.</p>
         <div class="hero-actions">
-          <a href="#portfolio" class="btn btn-dark">
-            Explore my work ↘
-          </a>
-
-          <a href="#services" class="btn btn-light">
-            Browse services ↗
-          </a>
+          <a href="#portfolio" class="btn btn-dark">Explore my work ↘</a>
+          <a href="#contact" class="btn btn-light">Let's talk ↗</a>
         </div>
       </div>
-
-      <div class="hero-banner">
-        <div class="hero-banner-content">
-          <p>Ideas · Creativity · Technology</p>
-          <h2>Turning creative ideas into visuals that stand out.</h2>
-        </div>
-
-        <div class="hero-banner-side">
-          Creative solutions for brands, businesses<br>
-          and creators
+      <div class="hero-showcase" aria-label="Selected creative work">
+        <div class="hero-showcase-main"><img src="assets/1.jpg" alt="Selected product advertising creative" loading="eager"></div>
+        <div class="hero-showcase-side">
+          <div class="hero-showcase-small"><img src="assets/thumbnail design.jpg" alt="Selected YouTube thumbnail design" loading="lazy"></div>
+          <div class="hero-showcase-small"><img src="assets/14.jpg" alt="Selected social and product campaign creative" loading="lazy"></div>
         </div>
       </div>
-
     </header>
 
 
@@ -1164,13 +1192,27 @@
           <h2>Brands I've worked with.</h2>
           <p class="section-description">A selection of brands featured in my completed creative projects.</p>
         </div>
-        <div class="client-logos reveal" aria-label="Brands worked with">
-          <div class="client-wordmark morton">MORTON</div>
-          <div class="client-wordmark nalam">Nalam</div>
-          <div class="client-wordmark foxnuts">FOX NUTS</div>
-          <div class="client-wordmark heritage">Heritage Pickles</div>
-          <div class="client-wordmark fresh">fresh</div>
-          <div class="client-wordmark amritsar">AMRITSAR HAVELI</div>
+        <div class="logo-marquee client-marquee reveal" aria-label="Brands worked with">
+          <div class="logo-track">
+            <div class="logo-set">
+              <div class="logo-item"><img src="assets/client-logos/birla-morton.jpg" alt="Birla and Morton"></div>
+              <div class="logo-item"><img src="assets/client-logos/nalam.webp" alt="Nalam"></div>
+              <div class="logo-item"><img src="assets/client-logos/heritage.jpg" alt="Heritage"></div>
+              <div class="logo-item"><img src="assets/client-logos/minute-maid.png" alt="Minute Maid"></div>
+              <div class="logo-item"><img src="assets/client-logos/amritsar-haveli.webp" alt="Amritsar Haveli"></div>
+              <div class="logo-item"><img src="assets/client-logos/paradise-group.jpg" alt="Paradise Group"></div>
+              <div class="logo-item"><img src="assets/client-logos/parekh-collaborative.png" alt="Parekh Collaborative"></div>
+            </div>
+            <div class="logo-set" aria-hidden="true">
+              <div class="logo-item"><img src="assets/client-logos/birla-morton.jpg" alt=""></div>
+              <div class="logo-item"><img src="assets/client-logos/nalam.webp" alt=""></div>
+              <div class="logo-item"><img src="assets/client-logos/heritage.jpg" alt=""></div>
+              <div class="logo-item"><img src="assets/client-logos/minute-maid.png" alt=""></div>
+              <div class="logo-item"><img src="assets/client-logos/amritsar-haveli.webp" alt=""></div>
+              <div class="logo-item"><img src="assets/client-logos/paradise-group.jpg" alt=""></div>
+              <div class="logo-item"><img src="assets/client-logos/parekh-collaborative.png" alt=""></div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -1196,13 +1238,7 @@
         <div class="services-grid">
 
           <article class="service-card reveal">
-
-            <div class="service-top">
-              <span class="service-icon">▧</span>
-              <span class="service-number">SERVICE 01</span>
-            </div>
-
-            <h3>YouTube Thumbnails</h3>
+<h3>YouTube Thumbnails</h3>
 
             <p>
               Attention-grabbing thumbnails designed to communicate
@@ -1225,17 +1261,11 @@
           </article>
 
           <article class="service-card reveal">
-
-            <div class="service-top">
-              <span class="service-icon">◈</span>
-              <span class="service-number">SERVICE 02</span>
-            </div>
-
-            <h3>Social Media Posts</h3>
+<h3>Social Media Posts</h3>
 
             <p>
-              Creative social media designs, promotional posts,
-              branded creatives and campaign graphics for your business.
+              Scroll-stopping social creatives, branded posts, campaign graphics
+              and promotional content designed for your social channels.
             </p>
 
             <div class="service-tags">
@@ -1254,17 +1284,11 @@
           </article>
 
           <article class="service-card reveal">
-
-            <div class="service-top">
-              <span class="service-icon">✳</span>
-              <span class="service-number">SERVICE 03</span>
-            </div>
-
-            <h3>Product Advertising</h3>
+<h3>Product Advertising</h3>
 
             <p>
-              AI-assisted product advertising visuals and creative
-              concepts to showcase your products in memorable ways.
+              Product-focused advertising visuals and campaign concepts
+              that showcase features, benefits and product value.
             </p>
 
             <div class="service-tags">
@@ -1283,13 +1307,7 @@
           </article>
 
           <article class="service-card reveal">
-
-            <div class="service-top">
-              <span class="service-icon">▶</span>
-              <span class="service-number">SERVICE 04</span>
-            </div>
-
-            <h3>AI Reels</h3>
+<h3>AI Reels</h3>
 
             <p>
               AI-assisted short-form videos for product promotions,
@@ -1312,13 +1330,7 @@
           </article>
 
           <article class="service-card reveal">
-
-            <div class="service-top">
-              <span class="service-icon">▸</span>
-              <span class="service-number">SERVICE 05</span>
-            </div>
-
-            <h3>Video Editing</h3>
+<h3>Video Editing</h3>
 
             <p>
               Engaging video edits for creators and brands, shaped around
@@ -1338,6 +1350,21 @@
               </a>
             </div>
 
+          </article>
+
+          <article class="service-card reveal">
+            <h3>Other Services</h3>
+            <p>Beyond creative design, I also offer presentation design, research documentation, website development and mobile app development to help bring your ideas to life.</p>
+            <div class="service-tags">
+              <span>Presentations &amp; pitch decks</span>
+              <span>Research documents</span>
+              <span>Website development</span>
+              <span>Mobile app development</span>
+            </div>
+            <div class="service-bottom">
+              <small>Custom quotes available</small>
+              <a href="mailto:shelar.rohit2332@gmail.com?subject=Other%20Services%20Enquiry">Enquire ↗</a>
+            </div>
           </article>
 
         </div>
@@ -1431,21 +1458,21 @@
   <div class="portfolio-art has-image"><img src="assets/11.jpg" alt="Nalam — Coconut Oil portfolio preview" loading="lazy"></div>
   <div class="portfolio-meta"><h3>Nalam — Coconut Oil</h3><p>Product advertising</p></div>
 </article>
-<article class="portfolio-item reveal" data-category="product" data-title="Morton — Real Taste" data-description="A food-led promotional creative for Morton sauce.">
+<article class="portfolio-item reveal" data-category="social" data-title="Morton — Real Taste" data-description="A food-led promotional creative for Morton sauce.">
   <div class="portfolio-art has-image"><img src="assets/12.jpg" alt="Morton — Real Taste portfolio preview" loading="lazy"></div>
-  <div class="portfolio-meta"><h3>Morton — Real Taste</h3><p>Product advertising</p></div>
+  <div class="portfolio-meta"><h3>Morton — Real Taste</h3><p>Social media creative</p></div>
 </article>
 <article class="portfolio-item reveal" data-category="product" data-title="Heritage Pickles — Feel Our Heritage" data-description="A rustic product visual for Heritage Pickles.">
   <div class="portfolio-art has-image"><img src="assets/13.jpg" alt="Heritage Pickles — Feel Our Heritage portfolio preview" loading="lazy"></div>
   <div class="portfolio-meta"><h3>Heritage Pickles — Feel Our Heritage</h3><p>Product advertising</p></div>
 </article>
-<article class="portfolio-item reveal" data-category="product" data-title="Fresh — Premium Mango" data-description="A tropical summer campaign for a mango beverage.">
+<article class="portfolio-item reveal" data-category="social" data-title="Fresh — Premium Mango" data-description="A tropical summer campaign for a mango beverage.">
   <div class="portfolio-art has-image"><img src="assets/14.jpg" alt="Fresh — Premium Mango portfolio preview" loading="lazy"></div>
-  <div class="portfolio-meta"><h3>Fresh — Premium Mango</h3><p>Product advertising</p></div>
+  <div class="portfolio-meta"><h3>Fresh — Premium Mango</h3><p>Social media creative</p></div>
 </article>
-<article class="portfolio-item reveal" data-category="product" data-title="Amritsar Haveli — Paneer Lababdar" data-description="A food-led promotional creative for Amritsar Haveli.">
+<article class="portfolio-item reveal" data-category="social" data-title="Amritsar Haveli — Paneer Lababdar" data-description="A food-led promotional creative for Amritsar Haveli.">
   <div class="portfolio-art has-image"><img src="assets/15.jpg" alt="Amritsar Haveli — Paneer Lababdar portfolio preview" loading="lazy"></div>
-  <div class="portfolio-meta"><h3>Amritsar Haveli — Paneer Lababdar</h3><p>Product advertising</p></div>
+  <div class="portfolio-meta"><h3>Amritsar Haveli — Paneer Lababdar</h3><p>Social media creative</p></div>
 </article>
 <article class="portfolio-item reveal" data-category="youtube" data-title="Technology — Digital Future" data-description="A technology-focused YouTube thumbnail built around a futuristic visual concept.">
   <div class="portfolio-art has-image"><img src="assets/thumbnail design.jpg" alt="Technology — Digital Future portfolio preview" loading="lazy"></div>
@@ -1609,19 +1636,33 @@
           </p>
         </div>
 
-        <div class="tools-grid">
-
-          <article class="tool-card reveal"><div class="tool-logo">M</div><h3>Midjourney</h3><p>AI image generation</p></article>
-          <article class="tool-card reveal"><div class="tool-logo">H</div><h3>HeyGen</h3><p>AI avatar videos</p></article>
-          <article class="tool-card reveal"><div class="tool-logo">AI</div><h3>ChatGPT</h3><p>Ideas and prompt development</p></article>
-          <article class="tool-card reveal"><div class="tool-logo">H</div><h3>Higgsfield</h3><p>AI visual and video creation</p></article>
-          <article class="tool-card reveal"><div class="tool-logo">11</div><h3>ElevenLabs</h3><p>AI voice and audio</p></article>
-          <article class="tool-card reveal"><div class="tool-logo">G</div><h3>Gemini</h3><p>AI-assisted creative workflows</p></article>
-          <article class="tool-card reveal"><div class="tool-logo">C</div><h3>Canva</h3><p>Graphic design and layouts</p></article>
-          <article class="tool-card reveal"><div class="tool-logo">C</div><h3>Claude</h3><p>Writing and creative support</p></article>
-          <article class="tool-card reveal"><div class="tool-logo">▶</div><h3>CapCut PC</h3><p>Video editing and production</p></article>
-          <article class="tool-card reveal"><div class="tool-logo">F</div><h3>Google Flow</h3><p>AI video creation</p></article>
-
+        <div class="logo-marquee tools-marquee reveal" aria-label="Creative tools">
+          <div class="logo-track">
+            <div class="logo-set">
+              <div class="tool-logo-item"><img src="https://www.google.com/s2/favicons?domain=midjourney.com&amp;sz=128" alt=""><span>Midjourney</span></div>
+              <div class="tool-logo-item"><img src="https://www.google.com/s2/favicons?domain=heygen.com&amp;sz=128" alt=""><span>HeyGen</span></div>
+              <div class="tool-logo-item"><img src="https://www.google.com/s2/favicons?domain=chatgpt.com&amp;sz=128" alt=""><span>ChatGPT</span></div>
+              <div class="tool-logo-item"><img src="https://www.google.com/s2/favicons?domain=higgsfield.ai&amp;sz=128" alt=""><span>Higgsfield</span></div>
+              <div class="tool-logo-item"><img src="https://www.google.com/s2/favicons?domain=elevenlabs.io&amp;sz=128" alt=""><span>ElevenLabs</span></div>
+              <div class="tool-logo-item"><img src="https://www.google.com/s2/favicons?domain=gemini.google.com&amp;sz=128" alt=""><span>Gemini</span></div>
+              <div class="tool-logo-item"><img src="https://www.google.com/s2/favicons?domain=canva.com&amp;sz=128" alt=""><span>Canva</span></div>
+              <div class="tool-logo-item"><img src="https://www.google.com/s2/favicons?domain=claude.ai&amp;sz=128" alt=""><span>Claude</span></div>
+              <div class="tool-logo-item"><img src="https://www.google.com/s2/favicons?domain=capcut.com&amp;sz=128" alt=""><span>CapCut PC</span></div>
+              <div class="tool-logo-item"><img src="https://www.google.com/s2/favicons?domain=labs.google&amp;sz=128" alt=""><span>Google Flow</span></div>
+            </div>
+            <div class="logo-set" aria-hidden="true">
+              <div class="tool-logo-item"><img src="https://www.google.com/s2/favicons?domain=midjourney.com&amp;sz=128" alt=""><span>Midjourney</span></div>
+              <div class="tool-logo-item"><img src="https://www.google.com/s2/favicons?domain=heygen.com&amp;sz=128" alt=""><span>HeyGen</span></div>
+              <div class="tool-logo-item"><img src="https://www.google.com/s2/favicons?domain=chatgpt.com&amp;sz=128" alt=""><span>ChatGPT</span></div>
+              <div class="tool-logo-item"><img src="https://www.google.com/s2/favicons?domain=higgsfield.ai&amp;sz=128" alt=""><span>Higgsfield</span></div>
+              <div class="tool-logo-item"><img src="https://www.google.com/s2/favicons?domain=elevenlabs.io&amp;sz=128" alt=""><span>ElevenLabs</span></div>
+              <div class="tool-logo-item"><img src="https://www.google.com/s2/favicons?domain=gemini.google.com&amp;sz=128" alt=""><span>Gemini</span></div>
+              <div class="tool-logo-item"><img src="https://www.google.com/s2/favicons?domain=canva.com&amp;sz=128" alt=""><span>Canva</span></div>
+              <div class="tool-logo-item"><img src="https://www.google.com/s2/favicons?domain=claude.ai&amp;sz=128" alt=""><span>Claude</span></div>
+              <div class="tool-logo-item"><img src="https://www.google.com/s2/favicons?domain=capcut.com&amp;sz=128" alt=""><span>CapCut PC</span></div>
+              <div class="tool-logo-item"><img src="https://www.google.com/s2/favicons?domain=labs.google&amp;sz=128" alt=""><span>Google Flow</span></div>
+            </div>
+          </div>
         </div>
 
       </div>
@@ -1680,7 +1721,7 @@
           <p class="section-description">A few quick answers to common project questions.</p>
         </div>
         <div class="faq-list reveal">
-          <details class="faq-item"><summary>What services do you offer?</summary><p>I offer YouTube thumbnails, social media posts, product advertising, AI reels and video editing.</p></details>
+          <details class="faq-item"><summary>What services do you offer?</summary><p>I offer YouTube thumbnails, social media posts, product advertising, AI reels, video editing, presentations, research documents, website development and mobile app development.</p></details>
           <details class="faq-item"><summary>How do I get a quote for my project?</summary><p>Share your requirements, references and expected deliverables through email or WhatsApp. I'll review the details and provide a custom quote.</p></details>
           <details class="faq-item"><summary>How long does a project take?</summary><p>Timelines depend on the type and complexity of the project. I'll confirm an estimated delivery time before we begin.</p></details>
           <details class="faq-item"><summary>Do you work with international clients?</summary><p>Yes. I can discuss projects with clients and businesses from different countries.</p></details>
