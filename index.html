@@ -1180,24 +1180,28 @@
     .btn-hero span { display:inline-block; font-size:17px; transition:transform .25s ease; }
     .btn-hero:hover { transform:translateY(-3px); filter:saturate(1.06); box-shadow:0 13px 28px rgba(89,117,66,.2), inset 0 1px 0 rgba(255,255,255,.9); }
     .btn-hero:hover span { transform:translate(3px,3px); }
-    .hero-showcase { height:420px; max-width:1000px; margin:34px auto 0; }
-    .hero-collage-main { width:48%; height:84%; left:18%; top:2%; transform:rotate(-4deg); }
-    .hero-collage-social { width:38%; height:70%; right:16%; top:18%; transform:rotate(5deg); }
+    .hero-showcase { height:440px; max-width:1000px; margin:34px auto 0; }
+    .hero-collage-main { width:35%; height:68%; left:13%; top:2%; z-index:2; transform:rotate(-5deg); }
+    .hero-collage-social { width:35%; height:66%; right:13%; top:1%; z-index:1; transform:rotate(5deg); }
+    .hero-collage-third { width:34%; height:64%; left:27%; top:34%; z-index:3; transform:rotate(3deg); animation:collage-float-a 8s ease-in-out infinite; }
+    .hero-collage-fourth { width:33%; height:62%; right:12%; top:36%; z-index:2; transform:rotate(-4deg); animation:collage-float-c 8.5s ease-in-out infinite; }
     .hero-collage-label { font-size:10px; }
     @media(max-width:760px) {
       .hero { padding-top:68px; }
       .hero h1 { letter-spacing:-3.5px; }
       .hero-description { max-width:540px; font-size:14px; }
-      .hero-showcase { height:310px; margin-top:30px; }
-      .hero-collage-main { width:55%; height:78%; left:8%; top:3%; }
-      .hero-collage-social { width:43%; height:65%; right:7%; top:22%; }
+      .hero-showcase { height:360px; margin-top:30px; }
+      .hero-collage-main { width:43%; height:58%; left:3%; top:2%; }
+      .hero-collage-social { width:43%; height:57%; right:3%; top:1%; }
+      .hero-collage-third { width:43%; height:56%; left:8%; top:39%; }
+      .hero-collage-fourth { width:42%; height:54%; right:5%; top:40%; }
       .hero-collage-label { left:7px; bottom:7px; padding:5px 7px; font-size:8px; }
       .hero-collage-note { font-size:10px; }
     }
     @media(max-width:390px) {
-      .hero-showcase { height:260px; }
-      .hero-collage-main { width:57%; }
-      .hero-collage-social { width:45%; }
+      .hero-showcase { height:320px; }
+      .hero-collage-main, .hero-collage-social { height:55%; }
+      .hero-collage-third, .hero-collage-fourth { height:52%; top:42%; }
     }
 
   </style>
@@ -1238,8 +1242,10 @@
         </div>
       </div>
       <div class="hero-showcase" aria-label="A floating collage of selected creative work">
-        <div class="hero-collage-card hero-collage-main"><img src="assets/1.jpg" alt="Selected product advertising creative" loading="eager"><span class="hero-collage-label">Product campaigns</span></div>
-        <div class="hero-collage-card hero-collage-social"><img src="assets/14.jpg" alt="Selected social media campaign creative" loading="lazy"><span class="hero-collage-label">Visual stories</span></div>
+        <div class="hero-collage-card hero-collage-main"><img src="assets/12.jpg" alt="Morton — Real Taste" loading="eager"><span class="hero-collage-label">Morton — Real Taste</span></div>
+        <div class="hero-collage-card hero-collage-social"><img src="assets/4.jpg" alt="Green Smoothie — Nature Campaign" loading="lazy"><span class="hero-collage-label">Green Smoothie — Nature Campaign</span></div>
+        <div class="hero-collage-card hero-collage-third"><img src="assets/8.jpg" alt="Nalam — Natural Protection" loading="lazy"><span class="hero-collage-label">Nalam — Natural Protection</span></div>
+        <div class="hero-collage-card hero-collage-fourth"><img src="assets/13.jpg" alt="Heritage Pickles — Feel Our Heritage" loading="lazy"><span class="hero-collage-label">Heritage Pickles — Feel Our Heritage</span></div>
         <span class="hero-collage-note">A little bit of everything, made to stand out.</span>
       </div>
     </header>
