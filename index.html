@@ -1109,6 +1109,34 @@
     .tool-logo-item img { width:34px; height:34px; object-fit:contain; border-radius:8px; }
     .tool-logo-item span { font-size:12px; font-weight:600; white-space:nowrap; color:var(--text); }
     @keyframes logo-marquee { from { transform:translateX(0); } to { transform:translateX(-50%); } }
+
+    /* Floating creative collage in the hero */
+    .hero-showcase { position:relative; display:block; height:430px; margin-top:48px; isolation:isolate; }
+    .hero-collage-card { position:absolute; overflow:hidden; border-radius:20px; background:#eeeee9; box-shadow:0 22px 55px rgba(30,32,25,.13); border:7px solid rgba(255,255,255,.88); }
+    .hero-collage-card img { display:block; width:100%; height:100%; object-fit:cover; }
+    .hero-collage-main { width:43%; height:83%; left:28%; top:3%; z-index:2; transform:rotate(-3deg); animation:collage-float-a 7s ease-in-out infinite; }
+    .hero-collage-thumb { width:27%; height:62%; left:8%; top:22%; z-index:3; transform:rotate(7deg); animation:collage-float-b 8s ease-in-out infinite; }
+    .hero-collage-social { width:29%; height:66%; right:8%; top:18%; z-index:1; transform:rotate(5deg); animation:collage-float-c 7.5s ease-in-out infinite; }
+    .hero-collage-label { position:absolute; left:12px; bottom:12px; padding:7px 11px; border-radius:30px; background:rgba(255,255,255,.88); color:#262720; font-size:10px; font-weight:650; letter-spacing:.2px; backdrop-filter:blur(12px); }
+    .hero-collage-note { position:absolute; bottom:0; left:50%; transform:translateX(-50%); color:var(--muted); font-size:12px; letter-spacing:.2px; white-space:nowrap; }
+    @keyframes collage-float-a { 0%,100%{translate:0 0} 50%{translate:0 -10px} }
+    @keyframes collage-float-b { 0%,100%{translate:0 0} 50%{translate:0 11px} }
+    @keyframes collage-float-c { 0%,100%{translate:0 0} 50%{translate:0 -8px} }
+    .logo-item img[src*="paradise-group"] { max-width:150%; max-height:76px; transform:scale(1.18); }
+    .tool-logo-item img.google-flow-logo { width:42px; height:42px; object-fit:contain; border-radius:0; }
+    .portfolio-art.video-art { overflow:hidden; aspect-ratio:9/16; background:#e8e6df; }
+    .portfolio-art.video-art .portfolio-card-video { display:block; width:100%; height:100%; object-fit:cover; }
+    .portfolio-art.video-art .video-play { opacity:.82; pointer-events:none; }
+    @media(max-width:760px) {
+      .hero-showcase { height:330px; margin-top:34px; }
+      .hero-collage-main { width:48%; height:78%; left:26%; }
+      .hero-collage-thumb { width:31%; height:58%; left:3%; top:24%; }
+      .hero-collage-social { width:31%; height:60%; right:3%; top:20%; }
+      .hero-collage-label { left:7px; bottom:7px; padding:5px 7px; font-size:8px; }
+      .hero-collage-note { font-size:10px; }
+    }
+    @media(prefers-reduced-motion:reduce) { .hero-collage-card { animation:none !important; } }
+
     .services-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
     .service-card { min-height:235px; display:flex; flex-direction:column; }
     .service-card h3 { margin-top:0; }
@@ -1173,12 +1201,11 @@
           <a href="#portfolio" class="btn btn-dark">Explore my work ↘</a>
         </div>
       </div>
-      <div class="hero-showcase" aria-label="Selected creative work">
-        <div class="hero-showcase-main"><img src="assets/1.jpg" alt="Selected product advertising creative" loading="eager"></div>
-        <div class="hero-showcase-side">
-          <div class="hero-showcase-small"><img src="assets/thumbnail design.jpg" alt="Selected YouTube thumbnail design" loading="lazy"></div>
-          <div class="hero-showcase-small"><img src="assets/14.jpg" alt="Selected social and product campaign creative" loading="lazy"></div>
-        </div>
+      <div class="hero-showcase" aria-label="A floating collage of selected creative work">
+        <div class="hero-collage-card hero-collage-main"><img src="assets/1.jpg" alt="Selected product advertising creative" loading="eager"><span class="hero-collage-label">Product campaigns</span></div>
+        <div class="hero-collage-card hero-collage-thumb"><img src="assets/thumbnail design.jpg" alt="Selected YouTube thumbnail design" loading="lazy"><span class="hero-collage-label">YouTube thumbnails</span></div>
+        <div class="hero-collage-card hero-collage-social"><img src="assets/14.jpg" alt="Selected social and product campaign creative" loading="lazy"><span class="hero-collage-label">Visual stories</span></div>
+        <span class="hero-collage-note">A little bit of everything, made to stand out.</span>
       </div>
     </header>
 
@@ -1647,7 +1674,7 @@
               <div class="tool-logo-item"><img src="https://www.google.com/s2/favicons?domain=canva.com&amp;sz=128" alt=""><span>Canva</span></div>
               <div class="tool-logo-item"><img src="https://www.google.com/s2/favicons?domain=claude.ai&amp;sz=128" alt=""><span>Claude</span></div>
               <div class="tool-logo-item"><img src="https://www.google.com/s2/favicons?domain=capcut.com&amp;sz=128" alt=""><span>CapCut PC</span></div>
-              <div class="tool-logo-item"><img src="https://www.google.com/s2/favicons?domain=labs.google&amp;sz=128" alt=""><span>Google Flow</span></div>
+              <div class="tool-logo-item"><img class="google-flow-logo" src="assets/google-flow-logo.png" alt=""><span>Google Flow</span></div>
             </div>
             <div class="logo-set" aria-hidden="true">
               <div class="tool-logo-item"><img src="https://www.google.com/s2/favicons?domain=midjourney.com&amp;sz=128" alt=""><span>Midjourney</span></div>
@@ -1659,7 +1686,7 @@
               <div class="tool-logo-item"><img src="https://www.google.com/s2/favicons?domain=canva.com&amp;sz=128" alt=""><span>Canva</span></div>
               <div class="tool-logo-item"><img src="https://www.google.com/s2/favicons?domain=claude.ai&amp;sz=128" alt=""><span>Claude</span></div>
               <div class="tool-logo-item"><img src="https://www.google.com/s2/favicons?domain=capcut.com&amp;sz=128" alt=""><span>CapCut PC</span></div>
-              <div class="tool-logo-item"><img src="https://www.google.com/s2/favicons?domain=labs.google&amp;sz=128" alt=""><span>Google Flow</span></div>
+              <div class="tool-logo-item"><img class="google-flow-logo" src="assets/google-flow-logo.png" alt=""><span>Google Flow</span></div>
             </div>
           </div>
         </div>
@@ -1800,6 +1827,30 @@
     const filterButtons = document.querySelectorAll(".filter-btn");
     const portfolioItems = document.querySelectorAll(".portfolio-item");
 
+    // Muted, looping inline previews for reel cards. The modal remains the full player.
+    portfolioItems.forEach(item => {
+      const videoSource = item.dataset.video;
+      const artwork = item.querySelector(".portfolio-art.video-art");
+      if (!videoSource || !artwork) return;
+      const preview = document.createElement("video");
+      preview.className = "portfolio-card-video";
+      preview.src = videoSource;
+      preview.muted = true;
+      preview.defaultMuted = true;
+      preview.autoplay = true;
+      preview.loop = true;
+      preview.playsInline = true;
+      preview.setAttribute("muted", "");
+      preview.setAttribute("autoplay", "");
+      preview.setAttribute("loop", "");
+      preview.setAttribute("playsinline", "");
+      preview.preload = "metadata";
+      artwork.querySelector(".video-poster-placeholder")?.remove();
+      artwork.prepend(preview);
+      const playAttempt = preview.play();
+      if (playAttempt && typeof playAttempt.catch === "function") playAttempt.catch(() => {});
+    });
+
     filterButtons.forEach(button => {
 
       button.addEventListener("click", () => {
@@ -1817,9 +1868,13 @@
           const category = item.dataset.category;
           if (selectedFilter === "all" || category === selectedFilter) {
             item.classList.remove("hidden");
+            const cardVideo = item.querySelector(".portfolio-card-video");
+            if (cardVideo) { const attempt = cardVideo.play(); if (attempt && attempt.catch) attempt.catch(() => {}); }
             visibleCount++;
           } else {
             item.classList.add("hidden");
+            const cardVideo = item.querySelector(".portfolio-card-video");
+            if (cardVideo) cardVideo.pause();
           }
         });
         const emptyState = document.getElementById("portfolioEmpty");
@@ -1856,6 +1911,7 @@
           previewVideo.src = videoSource;
           previewVideo.controls = true;
           previewVideo.autoplay = true;
+          previewVideo.muted = false;
           previewVideo.playsInline = true;
           modalPreview.appendChild(previewVideo);
         } else if (image) {
