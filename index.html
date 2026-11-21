@@ -1115,12 +1115,10 @@
     .hero-collage-card { position:absolute; overflow:hidden; border-radius:20px; background:#eeeee9; box-shadow:0 22px 55px rgba(30,32,25,.13); border:7px solid rgba(255,255,255,.88); }
     .hero-collage-card img { display:block; width:100%; height:100%; object-fit:cover; }
     .hero-collage-main { width:43%; height:83%; left:28%; top:3%; z-index:2; transform:rotate(-3deg); animation:collage-float-a 7s ease-in-out infinite; }
-    .hero-collage-thumb { width:27%; height:62%; left:8%; top:22%; z-index:3; transform:rotate(7deg); animation:collage-float-b 8s ease-in-out infinite; }
     .hero-collage-social { width:29%; height:66%; right:8%; top:18%; z-index:1; transform:rotate(5deg); animation:collage-float-c 7.5s ease-in-out infinite; }
     .hero-collage-label { position:absolute; left:12px; bottom:12px; padding:7px 11px; border-radius:30px; background:rgba(255,255,255,.88); color:#262720; font-size:10px; font-weight:650; letter-spacing:.2px; backdrop-filter:blur(12px); }
     .hero-collage-note { position:absolute; bottom:0; left:50%; transform:translateX(-50%); color:var(--muted); font-size:12px; letter-spacing:.2px; white-space:nowrap; }
     @keyframes collage-float-a { 0%,100%{translate:0 0} 50%{translate:0 -10px} }
-    @keyframes collage-float-b { 0%,100%{translate:0 0} 50%{translate:0 11px} }
     @keyframes collage-float-c { 0%,100%{translate:0 0} 50%{translate:0 -8px} }
     .logo-item img[src*="paradise-group"] { max-width:150%; max-height:76px; transform:scale(1.18); }
     .tool-logo-item img.google-flow-logo { width:42px; height:42px; object-fit:contain; border-radius:0; }
@@ -1130,7 +1128,6 @@
     @media(max-width:760px) {
       .hero-showcase { height:330px; margin-top:34px; }
       .hero-collage-main { width:48%; height:78%; left:26%; }
-      .hero-collage-thumb { width:31%; height:58%; left:3%; top:24%; }
       .hero-collage-social { width:31%; height:60%; right:3%; top:20%; }
       .hero-collage-label { left:7px; bottom:7px; padding:5px 7px; font-size:8px; }
       .hero-collage-note { font-size:10px; }
@@ -1162,6 +1159,45 @@
     }
     @media(prefers-reduced-motion:reduce) {
       .logo-track { animation:none; }
+    }
+
+
+    /* Final hero refinement: centered introduction, premium CTA and two-piece collage */
+    .hero { text-align:center; padding-top:88px; padding-bottom:48px; }
+    .hero .eyebrow { margin-inline:auto; }
+    .hero h1 { max-width:1000px; margin:25px auto 0; }
+    .hero-bottom { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:25px; margin-top:27px; }
+    .hero-description { max-width:680px; margin-inline:auto; font-size:16px; }
+    .hero-actions { justify-content:center; }
+    .btn-hero {
+      position:relative; overflow:hidden; gap:14px; padding:16px 25px;
+      border:1px solid #c7d7b8; border-radius:100px;
+      background:linear-gradient(135deg,#e4f2d7 0%,#c8e5ae 52%,#b6d995 100%);
+      color:#20291c; font-size:13px; font-weight:700; letter-spacing:.1px;
+      box-shadow:0 8px 22px rgba(89,117,66,.13), inset 0 1px 0 rgba(255,255,255,.8);
+      transition:transform .25s ease, box-shadow .25s ease, filter .25s ease;
+    }
+    .btn-hero span { display:inline-block; font-size:17px; transition:transform .25s ease; }
+    .btn-hero:hover { transform:translateY(-3px); filter:saturate(1.06); box-shadow:0 13px 28px rgba(89,117,66,.2), inset 0 1px 0 rgba(255,255,255,.9); }
+    .btn-hero:hover span { transform:translate(3px,3px); }
+    .hero-showcase { height:420px; max-width:1000px; margin:34px auto 0; }
+    .hero-collage-main { width:48%; height:84%; left:18%; top:2%; transform:rotate(-4deg); }
+    .hero-collage-social { width:38%; height:70%; right:16%; top:18%; transform:rotate(5deg); }
+    .hero-collage-label { font-size:10px; }
+    @media(max-width:760px) {
+      .hero { padding-top:68px; }
+      .hero h1 { letter-spacing:-3.5px; }
+      .hero-description { max-width:540px; font-size:14px; }
+      .hero-showcase { height:310px; margin-top:30px; }
+      .hero-collage-main { width:55%; height:78%; left:8%; top:3%; }
+      .hero-collage-social { width:43%; height:65%; right:7%; top:22%; }
+      .hero-collage-label { left:7px; bottom:7px; padding:5px 7px; font-size:8px; }
+      .hero-collage-note { font-size:10px; }
+    }
+    @media(max-width:390px) {
+      .hero-showcase { height:260px; }
+      .hero-collage-main { width:57%; }
+      .hero-collage-social { width:45%; }
     }
 
   </style>
@@ -1198,13 +1234,12 @@
       <div class="hero-bottom">
         <p class="hero-description">I turn ideas into visuals that make people stop and look — from standout thumbnails and brand creatives to product ads, AI reels and polished videos.</p>
         <div class="hero-actions">
-          <a href="#portfolio" class="btn btn-dark">Explore my work ↘</a>
+          <a href="#portfolio" class="btn btn-hero">Explore My Work <span aria-hidden="true">↘</span></a>
         </div>
       </div>
       <div class="hero-showcase" aria-label="A floating collage of selected creative work">
         <div class="hero-collage-card hero-collage-main"><img src="assets/1.jpg" alt="Selected product advertising creative" loading="eager"><span class="hero-collage-label">Product campaigns</span></div>
-        <div class="hero-collage-card hero-collage-thumb"><img src="assets/thumbnail design.jpg" alt="Selected YouTube thumbnail design" loading="lazy"><span class="hero-collage-label">YouTube thumbnails</span></div>
-        <div class="hero-collage-card hero-collage-social"><img src="assets/14.jpg" alt="Selected social and product campaign creative" loading="lazy"><span class="hero-collage-label">Visual stories</span></div>
+        <div class="hero-collage-card hero-collage-social"><img src="assets/14.jpg" alt="Selected social media campaign creative" loading="lazy"><span class="hero-collage-label">Visual stories</span></div>
         <span class="hero-collage-note">A little bit of everything, made to stand out.</span>
       </div>
     </header>
@@ -1422,12 +1457,7 @@
         <div class="portfolio-filters">
 
           <button class="filter-btn active" data-filter="all">All work</button>
-
-          <button class="filter-btn" data-filter="youtube">
-            YouTube Thumbnails
-          </button>
-
-          <button class="filter-btn" data-filter="social">
+<button class="filter-btn" data-filter="social">
             Social Media
           </button>
 
@@ -1500,14 +1530,6 @@
   <div class="portfolio-art has-image"><img src="assets/15.jpg" alt="Amritsar Haveli — Paneer Lababdar portfolio preview" loading="lazy"></div>
   <div class="portfolio-meta"><h3>Amritsar Haveli — Paneer Lababdar</h3><p>Social media creative</p></div>
 </article>
-<article class="portfolio-item reveal" data-category="youtube" data-title="Technology — Digital Future" data-description="A technology-focused YouTube thumbnail built around a futuristic visual concept.">
-  <div class="portfolio-art has-image"><img src="assets/thumbnail design.jpg" alt="Technology — Digital Future portfolio preview" loading="lazy"></div>
-  <div class="portfolio-meta"><h3>Technology — Digital Future</h3><p>YouTube thumbnail</p></div>
-</article>
-<article class="portfolio-item reveal" data-category="youtube" data-title="Escape the Rat Race" data-description="A bold YouTube thumbnail concept about breaking away from the rat race.">
-  <div class="portfolio-art has-image"><img src="assets/thumbnail design!.jpg" alt="Escape the Rat Race portfolio preview" loading="lazy"></div>
-  <div class="portfolio-meta"><h3>Escape the Rat Race</h3><p>YouTube thumbnail</p></div>
-</article>
 <article class="portfolio-item reveal" data-category="reels" data-title="AI Reel — Outdoor Food Experience" data-description="A cinematic food and dining visual story." data-video="assets/16.mp4">
   <div class="portfolio-art has-image video-art"><span class="video-poster-placeholder" role="img" aria-label="AI Reel — Outdoor Food Experience portfolio preview"></span><span class="video-play" aria-hidden="true">▶</span></div>
   <div class="portfolio-meta"><h3>AI Reel — Outdoor Food Experience</h3><p>AI reels · Video</p></div>
@@ -1527,10 +1549,6 @@
 <article class="portfolio-item reveal" data-category="reels" data-title="AI Reel — Light & Crunchy" data-description="A snack product video highlighting a light and crunchy texture." data-video="assets/20.mp4">
   <div class="portfolio-art has-image video-art"><span class="video-poster-placeholder" role="img" aria-label="AI Reel — Light & Crunchy portfolio preview"></span><span class="video-play" aria-hidden="true">▶</span></div>
   <div class="portfolio-meta"><h3>AI Reel — Light & Crunchy</h3><p>AI reels · Video</p></div>
-</article>
-<article class="portfolio-item reveal" data-category="reels" data-title="AI Reel — Amul Kool" data-description="A beverage product short-form video." data-video="assets/21.mp4">
-  <div class="portfolio-art has-image video-art"><span class="video-poster-placeholder" role="img" aria-label="AI Reel — Amul Kool portfolio preview"></span><span class="video-play" aria-hidden="true">▶</span></div>
-  <div class="portfolio-meta"><h3>AI Reel — Amul Kool</h3><p>AI reels · Video</p></div>
 </article>
 <article class="portfolio-item reveal" data-category="reels" data-title="AI Reel — Cheese Pizza" data-description="A food product video featuring a cheesy pizza." data-video="assets/22.mp4">
   <div class="portfolio-art has-image video-art"><span class="video-poster-placeholder" role="img" aria-label="AI Reel — Cheese Pizza portfolio preview"></span><span class="video-play" aria-hidden="true">▶</span></div>
@@ -1555,7 +1573,7 @@
         </div>
         <p id="portfolioEmpty" class="portfolio-note" hidden>More projects in this category will be added soon.</p>
 
-        <p class="portfolio-note">Selected completed brand projects, thumbnail designs and video work. Social media post samples will be added as they are finalized.</p>
+        <p class="portfolio-note">Selected completed brand campaigns, social media creatives and video work.</p>
 
       </div>
 
